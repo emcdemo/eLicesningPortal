@@ -1,0 +1,800 @@
+
+@import "ext/theme-sso/sso-window.css";
+@import "ext/theme-sso/sso-form.css";
+@import "components/buttons.css";
+.textGreen {
+    color: #008000 !important;
+    font-weight: bold !important;
+}
+.textRed {
+    color: #FF0000 !important;
+    font-weight: bold !important;
+}
+.rulesError {
+    color: #FF0000 !important;
+    font-weight: bold !important;
+    padding-left: 0;
+}
+.rulesArea {
+    padding-left: 0;
+}
+.rulesHeader {
+    font-weight: bold;
+}
+.x-table-layout td {
+    vertical-align: top;
+}
+.btmborderGray {
+    border-bottom: 1px dotted #D9D9D9;
+    clear: both;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.btnbordertop {
+    border-top: 1px solid #CCCED1;
+    margin: 0 15px;
+    padding: 10px 0 15px;
+}
+.captchaimgbox {
+    border: 1px solid #CCCED1;
+    margin-left: 236px;
+    margin-top: 10px;
+}
+.ext-ie6 .captchaimgbox {
+    margin-left: 237px;
+}
+.ext-ie7 .captchaimgbox, .ext-ie8 .captchaimgbox {
+    margin-left: 235px;
+}
+.resetaccntfldset {
+    border: medium none !important;
+    clear: left;
+    display: block;
+    margin-bottom: 0;
+    padding: 10px 0 0;
+}
+.x-form-item label.x-form-item-label {
+    color: #4C4C4C;
+    font-weight: bold;
+}
+.x-form-element {
+    margin-bottom: 10px;
+}
+.x-form-item {
+    margin-bottom: 0;
+}
+.required {
+    color: #FF0000 !important;
+}
+.fgtpwdtitle {
+    color: #4C4C4C;
+    font-size: 11px;
+}
+.x-window-mc {
+    border: medium none;
+}
+.xx-form-invalid-msg {
+    color: #CB2D1F;
+    line-height: 15px;
+    overflow: visible;
+    padding-left: 20px;
+    width: 230px;
+}
+.x-form-invalid-icon .xx-form-invalid-msg {
+    margin-top: 5px !important;
+}
+.ext-chrome #forgotPwdForm .xx-form-invalid-msg {
+    font-size: 12px;
+    width: 300px;
+}
+.ext-chrome .x-form-invalid-icon .xx-form-invalid-msg {
+    margin-top: 2px !important;
+}
+#forgotPwdForm .xx-form-invalid-msg {
+    width: 300px;
+}
+#forgotPwdForm .captcha-code-error-msg {
+    background-image: url("../images/exclamation.gif");
+    background-position: 0 -1px;
+    background-repeat: no-repeat;
+    color: #CB2D1F;
+    line-height: 16px;
+    margin-left: 235px;
+    padding-left: 20px;
+}
+#confirmPwdForm .xx-form-invalid-msg {
+    background: url("../images/exclamation.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    line-height: 13px;
+    margin: 4px 0 10px;
+    padding: 2px 0 0 20px;
+}
+#confirmPwdForm .x-form-invalid-msg {
+    background-image: none;
+    width: auto;
+}
+.reqfield {
+    padding: 10px 0 5px;
+}
+.trynewcode {
+    float: right;
+    margin: 10px 80px 0 0;
+}
+#forgotPwdForm .trynewcode {
+    float: none;
+    margin: 10px 0 0;
+}
+#forgotPwdForm .trynewcode a {
+    padding-left: 10px;
+}
+.ext-ie6 #forgotPwdForm .trynewcode a {
+    padding-left: 8px;
+}
+#accountUpdateForm .x-fieldset {
+    padding: 10px 0 0;
+}
+:active, *:focus {
+    outline-style: none;
+}
+.bt {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border-top: medium none !important;
+    font-size: 1px;
+    height: 8px;
+    line-height: 1px;
+    padding-top: 0;
+}
+.bc {
+    background: none repeat scroll 0 0 #F2F7FA !important;
+}
+.bb {
+    background-repeat: no-repeat;
+    font-size: 1px;
+    height: 8px;
+    line-height: 1px;
+    padding-bottom: 0;
+}
+.bheader {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    line-height: 16px;
+    padding: 15px;
+}
+.visiting_msg {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#logout .visiting_msg {
+    margin-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: auto;
+}
+#loginbox .msgposition {
+    border: 0 solid #FF0000;
+    margin-left: 20px;
+    margin-top: -16px;
+}
+.ext-ie7 #loginbox .msgposition {
+    margin-left: 22px;
+    margin-top: -15px;
+}
+.ext-ie6 #loginbox .msgposition {
+    margin-left: 22px;
+    margin-top: -15px;
+}
+#challengeQuestionsForm form label.fgtpwdtitle {
+    display: block;
+}
+#challengeQuestionsForm form label.x-label-challengeQuestionErrorMsg {
+    background-attachment: scroll;
+    background-image: url("../images/exclamation.gif");
+    background-position: 0 2px;
+    background-repeat: no-repeat;
+    display: block;
+    line-height: 16px;
+    padding: 2px 2px 2px 18px;
+}
+#account-lock-window-id .x-tool {
+    background-image: none !important;
+}
+.combined-policy {
+    background-color: #F1F6F6;
+    border: 1px solid #DCDEE0;
+    margin: 15px;
+    padding: 12px;
+}
+#ppolicybox {
+    border: 0 solid #808080;
+    margin: 0;
+    padding: 0;
+    width: 600px;
+}
+#termofusebox {
+    border: 0 solid #808080;
+    margin: 0;
+    padding: 0;
+    width: 600px;
+}
+.policytext h1 {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.policytext h2 {
+    color: #404040;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 4px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding: 0;
+}
+.policytext p {
+    color: #4C4C4C;
+    font-size: 11px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.bluetitle {
+    color: #3B6C88;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 0;
+}
+.policytext img {
+    margin-top: -8px;
+    padding: 5px;
+}
+.btmborderGray {
+    border-bottom: 1px dotted #D9D9D9;
+}
+.main_col {
+    margin: 0 10px;
+}
+.browserSuppHeader {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 10px;
+}
+.browserMsg {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 10px 0 0 30px;
+}
+.browserImg {
+    padding-left: 0;
+    padding-right: 10px;
+}
+body {
+    color: #333333;
+    font-family: "Arial";
+    font-size: 14px;
+    height: 100%;
+    line-height: 20px;
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+}
+body a, body a:link, body a:active, body a:visited, body a:focus {
+    color: #1270AF;
+    font-size: 12px;
+    text-decoration: none;
+}
+body a:hover {
+    color: #7096BF;
+    text-decoration: none;
+}
+a span {
+    display: none;
+}
+select {
+    color: #CCCCCC;
+}
+form a {
+    float: left;
+    width: 98%;
+}
+.container {
+    margin: auto;
+    max-width: 980px;
+    position: relative;
+}
+#main {
+    padding-top: 48px;
+}
+* {
+    margin: 0;
+}
+h1 {
+    border-bottom: 1px solid #CCCCCC;
+    color: #2C95DD;
+    font-family: "Arial";
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    text-align: left;
+    text-transform: uppercase;
+    width: 660px;
+}
+h2 {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 15px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+p {
+    line-height: 18px;
+    margin-bottom: 15px;
+    margin-top: 13px;
+    text-align: left;
+}
+.linksL {
+    display: block !important;
+    font-size: 12px;
+    width: 100%;
+}
+a.first {
+    float: left;
+    width: auto;
+}
+#header {
+    background-color: #2C95DD;
+    background-image: none;
+    background-repeat: no-repeat;
+    height: 50px;
+    padding-top: 13px;
+}
+#emcLogo {
+    background-image: url("../images/EMCLogo-header.png");
+    background-repeat: no-repeat;
+    float: left;
+    height: 33px;
+    width: 101px;
+}
+#icon_language {
+    background: url("../images/globe-header.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 11px;
+    height: 21px;
+    line-height: 22px;
+    margin-top: 7px !important;
+    padding-left: 27px;
+    position: absolute;
+    right: 0;
+}
+#selectLang {
+    display: none;
+    margin: auto;
+    max-width: 980px;
+    position: relative;
+    right: 50px;
+}
+#selectLang .selectdiv {
+    height: 30px;
+    margin: 0 auto;
+    min-width: 220px;
+    width: 40%;
+}
+#selectLang #selectLanguage .x-form-field-wrap img.x-form-trigger {
+    background: url("../images/downArrow.jpg") no-repeat scroll right center rgba(0, 0, 0, 0) !important;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    margin: auto;
+    right: -8px !important;
+    width: 30px !important;
+}
+#selectLang #selectLanguage .selectboxdiv, #selectLang #selectLanguage .x-form-field-wrap {
+    height: 27px;
+    width: 100% !important;
+}
+.x-combo-list, .x-combo-list .x-combo-list-inner {
+    width: 216px !important;
+}
+.selectboxdiv-IE9 {
+    background-color: #FFFFFF;
+    border: 0 none;
+    color: #8C8C8C;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Arial";
+    font-size: 11px;
+    font-weight: normal;
+    height: 30px;
+    padding: 5px;
+    width: 220px;
+}
+option {
+    padding: 0 1em;
+}
+.arrow {
+    background: url("../images/downArrow.jpg") no-repeat scroll right center / 100% 100% rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 30px;
+    margin-left: -34px;
+    margin-top: -4px;
+    pointer-events: none;
+    vertical-align: middle;
+    width: 30px;
+}
+#selectLang .arrow-up {
+    border-bottom: 12px solid rgba(51, 51, 51, 0.8);
+    border-left: 12px solid rgba(0, 0, 0, 0);
+    border-right: 12px solid rgba(0, 0, 0, 0);
+    float: right;
+    height: 0;
+    margin-right: 36px;
+    width: 0;
+}
+#selectBottom {
+    background: none repeat scroll 0 0 rgba(51, 51, 51, 0.8);
+    border: medium none;
+    display: block;
+    margin-top: 12px;
+    overflow: hidden;
+    padding: 30px 20px;
+    position: absolute;
+    right: 0;
+    z-index: 52;
+}
+.loginError {
+    color: #B31221;
+    line-height: 13px;
+    margin-bottom: 10px;
+}
+#usernameWrapper, #passwordWrapper {
+}
+#chkBoxWrapper {
+    border-bottom: 1px solid #CCCCCC;
+    clear: left;
+    display: none;
+    font-size: 12px;
+    padding-bottom: 40px;
+    padding-top: 8px;
+    width: 660px;
+}
+button#loginBtn {
+    background-color: #2C95DD;
+    border: medium none;
+    border-radius: 3px;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-family: "Arial";
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 28px;
+    margin-bottom: 5px;
+    margin-top: 40px;
+    padding: 0;
+    text-transform: uppercase;
+    width: 250px;
+}
+.forgotPassword {
+    max-width: 250px;
+}
+#usernameWrapper input, #passwordWrapper input {
+    border: 1px solid #CCCCCC;
+    color: #666666;
+    display: block;
+    font-family: "Arial";
+    font-size: 14px;
+    height: 25px;
+    margin-bottom: 15px;
+    padding-left: 2%;
+    position: relative;
+    text-align: left;
+    width: 98%;
+}
+input.error {
+    border: 1px solid #B31221 !important;
+}
+#loginErrors {
+    color: #B31221;
+    position: relative;
+    top: 10px;
+}
+#usernameWrapper label, #passwordWrapper label {
+    display: block;
+    margin-bottom: 8px;
+}
+.loginForm {
+    float: left;
+    margin-right: 42px;
+    margin-top: 18px;
+    width: 100%;
+}
+.colContainer {
+    position: relative;
+}
+.container .col {
+    float: left;
+    margin-right: 20px;
+    width: 320px;
+}
+#chkBoxWrapper label {
+    text-indent: 0.5em;
+    vertical-align: middle;
+    width: 33%;
+}
+input[type="checkbox"] {
+    border: 0 none;
+    padding: 0;
+    vertical-align: middle;
+    width: auto;
+}
+.useNtLoginName {
+    float: left;
+    font-size: 12px;
+    padding-top: 12px;
+}
+@media only screen and (max-width: 502px) {
+#header #icon_language {
+    background: url("../images/globe-header.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    float: right;
+    height: 21px;
+    margin: 8px 0 0 !important;
+    padding-left: 0;
+    width: 21px;
+}
+.container {
+    margin: 0 20px;
+}
+.container .col {
+    width: 100%;
+}
+#selectLang {
+    right: 0;
+}
+#selectLang .arrow-up {
+    margin-right: 20px;
+}
+#selectLang .selectdiv {
+    float: none;
+}
+#main h2 {
+    border-bottom: 1px solid #CCCCCC;
+    color: #54A1D5;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 18px;
+    text-transform: uppercase;
+}
+#main h1, #main p.ifRegistered, #main .colRight h2, #main .colRight p, .colLeft p.left {
+    display: none;
+}
+button#loginBtn {
+    height: 38px;
+    width: 100%;
+}
+p.bottom {
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 35px;
+}
+#passwordWrapper input {
+    margin-bottom: 0;
+}
+}
+@media screen and (min-width: 503px) and (max-width: 767px) {
+#header #emcLogo {
+    float: none;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+}
+#header #icon_language {
+    background: url("../images/globe-header.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 21px;
+    padding-left: 0;
+    width: 21px;
+}
+.container {
+    margin: 0 20px;
+}
+.container .col {
+    width: 100%;
+}
+#selectLang {
+    right: 0;
+}
+#selectLang .arrow-up {
+    margin-right: 20px;
+}
+#usernameWrapper, #passwordWrapper {
+    width: 45%;
+}
+#usernameWrapper {
+    float: left;
+    margin-right: 10%;
+}
+#passwordWrapper {
+    float: left;
+}
+#usernameWrapper input, #passwordWrapper input {
+    margin-bottom: 0;
+}
+p.bottom {
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 38px;
+    width: 100%;
+}
+#main h2 {
+    border-bottom: 1px solid #CCCCCC;
+    color: #54A1D5;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 18px;
+    text-transform: uppercase;
+}
+#main h1, #main p.ifRegistered, #main .colRight h2, #main .colRight p, .colLeft p.left {
+    display: none;
+}
+button#loginBtn {
+    height: 38px;
+    margin-right: 10%;
+    margin-top: 38px;
+    width: 45%;
+}
+.loginForm {
+    margin-top: 0;
+}
+a.right {
+    float: right;
+    text-align: left;
+    width: 45%;
+}
+form a {
+    float: left;
+    margin-top: 51px;
+    width: 45%;
+}
+.linksL {
+    display: inline-block !important;
+    width: 45%;
+}
+}
+@media screen and (max-width: 767px) {
+#selectBottom {
+    padding: 30px 0;
+    width: 100%;
+}
+}
+@media screen and (min-width: 768px) and (max-width: 980px) {
+h1 {
+    width: 100%;
+}
+#header #emcLogo {
+    float: none;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+}
+#header #icon_language {
+    background: url("../images/globe-header.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    float: right;
+    height: 21px;
+    padding-left: 0;
+    width: 21px;
+}
+#selectLang {
+    right: 0;
+}
+#selectLang .arrow-up {
+    margin-right: 20px;
+}
+.container {
+    margin: 0 20px;
+}
+#main .container {
+    margin: 0 60px;
+}
+#main .col {
+    margin: 0;
+    width: 50%;
+}
+#usernameWrapper input, #passwordWrapper input {
+    width: 88%;
+}
+.container {
+    margin: 0 20px;
+}
+#main .container {
+    margin: 0 60px;
+}
+#main .col {
+    margin: 0;
+    width: 50%;
+}
+.colContainer {
+    border-bottom: 1px solid #CCCCCC;
+    height: 377px;
+    margin-bottom: 30px;
+}
+.container {
+    margin: 0 20px;
+}
+#main .col {
+    left: 0;
+    position: relative;
+    width: 50%;
+}
+}
+@media screen and (min-width: 980px) {
+#chkBoxWrapper {
+    display: block !important;
+}
+#header {
+    box-shadow: 0 3px 6px #CCCCCC;
+}
+#usernameWrapper input, #passwordWrapper input {
+    width: 242px;
+}
+button#loginBtn {
+    border: 1px solid #CCCCCC;
+    height: 28px;
+}
+a span {
+    display: block !important;
+}
+}
+#tokenwrapper label {
+    display: block;
+    margin-bottom: 8px;
+}
+#tokenwrapper input {
+    border: 1px solid #CCCCCC;
+    color: #666666;
+    display: block;
+    font-family: "Arial";
+    font-size: 14px;
+    height: 25px;
+    margin-bottom: 15px;
+    padding-left: 2%;
+    position: relative;
+    text-align: left;
+    width: 75%;
+}
+.subLoginHead {
+    margin-bottom: 10px;
+}
+.loginErrorToken {
+    color: #B31221;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+.submitToken {
+    background-color: #2C95DD;
+    border: medium none;
+    border-radius: 3px;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-family: "Arial";
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 28px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 0;
+    text-transform: uppercase;
+    width: 75%;
+}
