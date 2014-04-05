@@ -11,22 +11,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.emc.licensekey.activation.domain.LAC;
-import com.emc.licensekey.activation.service.LACService;
+
+import com.emc.licensekey.activation.service.SiteService;
 import com.emc.licensekey.util.JsonUtil;
 
 @Controller
-@RequestMapping("/activation")
-public class LicenseKeyActivationController {
+@RequestMapping("/site")
+public class SiteController {
 
 	@Autowired
-	LACService lacService;
+	SiteService siteService;
 	
-	@RequestMapping(value="home", method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody String loadHomePage(@RequestParam String lac) {
-		LAC  lacDetails = lacService.getLacDetails(lac);
+	@RequestMapping(value="list", method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody String getSiteDetails(@RequestParam String userId) {
 		try {
-			return JsonUtil.getJSonString(lacDetails);
+			return JsonUtil.getJSonString(siteService.getUserSiteDetails(userId));
 		} catch (JsonGenerationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -39,5 +38,4 @@ public class LicenseKeyActivationController {
 		}
 		return null;
 	}
-
 }

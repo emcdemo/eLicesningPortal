@@ -9,7 +9,7 @@ public class SimpleController {
 
 	@RequestMapping("/simple")
 	public @ResponseBody String simple() {
-		return "Hello prateek!";
+		return "Hello world!";
 	}
 
 }
