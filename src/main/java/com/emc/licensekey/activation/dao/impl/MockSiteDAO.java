@@ -1,12 +1,10 @@
 package com.emc.licensekey.activation.dao.impl;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
-
 import org.springframework.stereotype.Service;
-
 import com.emc.licensekey.activation.dao.SiteDAO;
 import com.emc.licensekey.activation.domain.SiteAddress;
 import com.emc.licensekey.activation.domain.SystemDetail;
@@ -62,18 +60,23 @@ public class MockSiteDAO implements SiteDAO {
 	{
 		SystemDetail system = new SystemDetail();
 		system.setSystemName(name);
-		system.setIpAddress(getRandomIpAddress());
-		system.setMacAddress(getRandomMacAddress());
+		system.setIpAddress(getRandomIpAddress(name));
+		system.setMacAddress(getRandomMacAddress(name));
 		
 		return system;
 	}
-	private static String getRandomMacAddress()
+	private static String getRandomMacAddress(String name)
 	{		 
-		 return String.format("AA:BB:CC:DD:" + "%02X:%02X", Math.random()%10, Math.random()%10);		   
+		 return String.format("AA:BB:CC:DD:" + "%02X:%02X", name.hashCode()%9, name.hashCode()%3);		   
 	}
-	private static String getRandomIpAddress()
+	private static String getRandomIpAddress(String name)
 	{
-		Random r = new Random();
-		return r.nextInt(256) + "." + r.nextInt(256) + "." + r.nextInt(256) + "." + r.nextInt(256);
+		try
+		{
+			return name.hashCode()%255 + "." + name.hashCode()%200 + "." + name.hashCode()%100 + "." + name.hashCode()%50;
+		}catch(Exception e)
+		{			
+			return "121.12.112.1";
+		}
 	}
 }

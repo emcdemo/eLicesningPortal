@@ -11,71 +11,54 @@ import com.emc.licensekey.activation.dao.ProductDAO;
 @Service
 public class MockProductDAO implements ProductDAO{
 
-	public static HashMap<String, List<String>> productStore = new HashMap<String, List<String>>();
+	static HashMap<String, List<String>> emcProductList = new HashMap<String, List<String>>();
 	
 	@Override
-	public List<String> getProductDetailsFromId(String id) {
-		// TODO Auto-generated method stub
-		return productStore.get(id);
+	public List<String> getProduct(String productId) {
+		return emcProductList.get(productId);
 	}
 	
 	static
 	{
 		List<String> productDetails = new ArrayList<String>();
-		productDetails.add("Networker Mod for Oracle CLT Oralce & Later UX");
-		productDetails.add("10");
-		productDetails.add("0");
+		productDetails.add("Networker Mod for Oracle CLT Oralce & Later UX");		
 		productDetails.add("L");
-	
-		productStore.put("1", productDetails);
+		emcProductList.put("1", productDetails);
 		
 		productDetails = new ArrayList<String>();
-		productDetails.add("Open File Mgr Client Server Windows");
-		productDetails.add("10");
-		productDetails.add("0");
+		productDetails.add("Open File Mgr Client Server Windows");		
 		productDetails.add("L");
 		
-		productStore.put("2", productDetails);
+		emcProductList.put("2", productDetails);
 		
 		productDetails = new ArrayList<String>();
-		productDetails.add("Open Client Workstation Windows");
-		productDetails.add("10");
-		productDetails.add("0");
+		productDetails.add("Open Client Workstation Windows");		
 		productDetails.add("L");
 		
-		productStore.put("3", productDetails);
+		emcProductList.put("3", productDetails);
 		
 		productDetails = new ArrayList<String>();
-		productDetails.add("PowerPath VE Unserved License, VMware");
-		productDetails.add("50");
-		productDetails.add("0");
+		productDetails.add("PowerPath VE Unserved License, VMware");		
+		productDetails.add("C");
+		emcProductList.put("4", productDetails);
+		
+		productDetails = new ArrayList<String>();
+		productDetails.add("PowerPath VE Served License, VMware");		
 		productDetails.add("C");
 		
-		productStore.put("4", productDetails);
+		emcProductList.put("5", productDetails);
 		
 		productDetails = new ArrayList<String>();
-		productDetails.add("PowerPath VE Served License, VMware");
-		productDetails.add("100");
-		productDetails.add("0");
+		productDetails.add("PowerPath for Windows");		
 		productDetails.add("C");
 		
-		productStore.put("5", productDetails);
+		emcProductList.put("6", productDetails);
 		
 		productDetails = new ArrayList<String>();
-		productDetails.add("PowerPath for Windows");
-		productDetails.add("1");
-		productDetails.add("0");
-		productDetails.add("C");
-		
-		productStore.put("6", productDetails);
-		
-		productDetails = new ArrayList<String>();
-		productDetails.add("Product Bundle Details");
-		productDetails.add("1");
-		productDetails.add("0");
+		productDetails.add("Product Bundle Details");		
 		productDetails.add("A");
 		
-		productStore.put("7", productDetails);
+		emcProductList.put("7", productDetails);
 	}
 
 }

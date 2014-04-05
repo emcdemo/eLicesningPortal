@@ -1,5 +1,6 @@
 package com.emc.licensekey.activation.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.junit.Assert;
@@ -15,17 +16,17 @@ import com.emc.licensekey.activation.dao.impl.MockLacProductDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"/dao/dao.xml"})
-public class MockProductDaoTest{
+public class MockLacProductDaoTest{
 
 	@Autowired(required=true)
-	ProductDAO productDAO;
+	LacProductDAO lacProductDetailsDAO;
 
 	@Test
 	public void testGetProduct() throws Exception {
-		String productId = "1";
-        List<String> productDetails = productDAO.getProduct(productId);        
+		String lacId = "AAA3BBBB4CCCCC5";
+		HashMap<String, List<String>> productDetails = lacProductDetailsDAO.getProductDetailsFromId(lacId);        
         Assert.assertNotNull(productDetails);
-        productDetails = productDAO.getProduct("-1");
+        productDetails = lacProductDetailsDAO.getProductDetailsFromId("-1");
         Assert.assertNull(productDetails);
     }
  }

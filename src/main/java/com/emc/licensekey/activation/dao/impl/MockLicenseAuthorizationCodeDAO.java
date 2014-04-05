@@ -9,9 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.emc.licensekey.activation.dao.LACDao;
-import com.emc.licensekey.activation.dao.ProductDAO;
+import com.emc.licensekey.activation.dao.LacProductDAO;
 import com.emc.licensekey.activation.domain.Fulfillment;
 import com.emc.licensekey.activation.domain.Product;
+import com.emc.licensekey.activation.domain.ProductDetail;
 import com.emc.licensekey.activation.domain.SiteAddress;
 import com.sun.org.apache.xerces.internal.impl.dv.xs.FullDVFactory;
 
@@ -19,7 +20,7 @@ import com.sun.org.apache.xerces.internal.impl.dv.xs.FullDVFactory;
 public class MockLicenseAuthorizationCodeDAO implements LACDao{
 	
 	@Autowired
-	ProductDAO productDAO;
+	LacProductDAO productDAO;
 	
 	private static HashMap<String, Fulfillment> lacfulfillmentDetails = new HashMap<String, Fulfillment>();
 	private static HashMap<String, List<String>> lacProducts = new HashMap<String, List<String>>();
@@ -33,7 +34,12 @@ public class MockLicenseAuthorizationCodeDAO implements LACDao{
 	public Fulfillment getFulFillmentDetailsFromId(String id) {
 		return lacfulfillmentDetails.get(id);
 	}
-
+	
+	@Override
+	public List<ProductDetail> getProductDetailsInLAC(String id) {
+		return null;
+	}
+	
 	static
 	{
 		String LAC = "AAA3BBBB4CCCCC5";
@@ -45,6 +51,7 @@ public class MockLicenseAuthorizationCodeDAO implements LACDao{
 		productList.add("5");
 		productList.add("6");
 		productList.add("7");
+		
 		lacProducts.put(LAC, productList);
 		
 		Fulfillment fulfillment = new Fulfillment();
@@ -57,7 +64,9 @@ public class MockLicenseAuthorizationCodeDAO implements LACDao{
 		fulfillment.setAddress(site);
 		fulfillment.setDate("Friday, April 04,2014");
 		fulfillment.setSentEmail("prateekjain@deloitte.com");
+		
 		lacfulfillmentDetails.put(LAC, fulfillment);
-
+		
 	}
+	
 }

@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ContextAnnotationAutowireCandidate
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.emc.licensekey.activation.dao.impl.MockProductDAO;
+import com.emc.licensekey.activation.dao.impl.MockLacProductDAO;
 import com.emc.licensekey.activation.domain.Fulfillment;
 
 @RunWith(SpringJUnit4ClassRunner.class)
