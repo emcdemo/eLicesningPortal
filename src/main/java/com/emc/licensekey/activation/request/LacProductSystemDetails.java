@@ -1,13 +1,13 @@
-package com.emc.licensekey.activation.domain;
+package com.emc.licensekey.activation.request;
 
-public class ActivationDetails {
+public class LacProductSystemDetails {
 
 	private String activationId;
-	private String siteId;
-	private String systemId;
-	private String activatedOn;
+	private String boundTo;
+	private int qty;
+    private String units;
+    private String activatedOn;
 	private String activatedBy;
-	
 	
 	public String getActivatedOn() {
 		return activatedOn;
@@ -27,17 +27,24 @@ public class ActivationDetails {
 	public void setActivationId(String activationId) {
 		this.activationId = activationId;
 	}
-	public String getSiteId() {
-		return siteId;
+	public String getBoundTo() {
+		return boundTo;
 	}
-	public void setSiteId(String siteId) {
-		this.siteId = siteId;
+	public void setBoundTo(String boundTo) {
+		this.boundTo = boundTo;
 	}
-	public String getSystemId() {
-		return systemId;
+	public int getQty() {
+		return qty;
 	}
-	public void setSystemId(String systemId) {
-		this.systemId = systemId;
+	public void setQty(int qty) {
+		this.qty = qty;
 	}
-	
+	public String getUnits() {
+		return units;
+	}
+	public void setUnits(String units) {
+		this.units = units;
+	}
+    
+
 }

@@ -2,15 +2,31 @@ package com.emc.licensekey.activation.domain;
 
 public class SystemDetail {
 
-	private String systemName;
+	private String id;
+	private String name;
 	private String lockingId;
 	private String ipAddress;
 	private String macAddress;
-	public String getSystemName() {
-		return systemName;
+	private String siteId;
+	
+	
+	public String getId() {
+		return id;
 	}
-	public void setSystemName(String systemName) {
-		this.systemName = systemName;
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getSiteId() {
+		return siteId;
+	}
+	public void setSiteId(String siteId) {
+		this.siteId = siteId;
 	}
 	public String getLockingId() {
 		return lockingId;
@@ -29,6 +45,5 @@ public class SystemDetail {
 	}
 	public void setMacAddress(String macAddress) {
 		this.macAddress = macAddress;
-	}
-	
+	}	
 }

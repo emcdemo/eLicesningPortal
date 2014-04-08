@@ -24,7 +24,7 @@ public class MockLacProductDaoTest{
 	@Test
 	public void testGetProduct() throws Exception {
 		String lacId = "AAA3BBBB4CCCCC5";
-		HashMap<String, List<String>> productDetails = lacProductDetailsDAO.getProductDetailsFromId(lacId);        
+		HashMap<String, List<Object>> productDetails = lacProductDetailsDAO.getProductDetailsFromId(lacId);        
         Assert.assertNotNull(productDetails);
         productDetails = lacProductDetailsDAO.getProductDetailsFromId("-1");
         Assert.assertNull(productDetails);

@@ -63,10 +63,19 @@ public class MockLicenseAuthorizationCodeDAO implements LACDao{
 		site.setPinCode("01730");
 		fulfillment.setAddress(site);
 		fulfillment.setDate("Friday, April 04,2014");
-		fulfillment.setSentEmail("prateekjain@deloitte.com");
+		fulfillment.setSentEmail("rohansud@deloitte.com");
 		
 		lacfulfillmentDetails.put(LAC, fulfillment);
 		
-	}
-	
+		LAC = "MMM3NNNN4LLLLL5";
+		productList = new ArrayList<String>();
+		
+		productList.add("1");
+		productList.add("8");
+		productList.add("9");
+		productList.add("10");
+		
+		lacProducts.put(LAC, productList);
+		lacfulfillmentDetails.put(LAC, fulfillment);		
+	}	
 }

@@ -3,6 +3,7 @@ package com.emc.licensekey.activation.dao.impl;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import com.emc.licensekey.activation.dao.ProductDAO;
 @Service
 public class MockProductDAO implements ProductDAO{
 
-	static HashMap<String, List<String>> emcProductList = new HashMap<String, List<String>>();
+	public static HashMap<String, List<String>> emcProductList = new HashMap<String, List<String>>();
 	
 	@Override
 	public List<String> getProduct(String productId) {
@@ -59,6 +60,35 @@ public class MockProductDAO implements ProductDAO{
 		productDetails.add("A");
 		
 		emcProductList.put("7", productDetails);
+		
+		productDetails = new ArrayList<String>();
+		productDetails.add("Isilon");		
+		productDetails.add("L");
+		
+		emcProductList.put("8", productDetails);
+		
+		productDetails = new ArrayList<String>();
+		productDetails.add("Greenplum");		
+		productDetails.add("L");
+		
+		emcProductList.put("9", productDetails);
+		
+		productDetails = new ArrayList<String>();
+		productDetails.add("RSA Security");		
+		productDetails.add("L");
+		
+		emcProductList.put("10", productDetails);
+		
+	
 	}
-
+	public static String getProductIdFromProductName(String productName)
+	{
+		for (Entry<String, List<String>> entry : MockProductDAO.emcProductList.entrySet()) {
+		    if(productName.equals(entry.getValue().get(0)))
+		    {
+		    	return entry.getKey();
+		    }
+		}
+		return null;
+	}
 }

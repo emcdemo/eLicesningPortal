@@ -18,34 +18,39 @@
 <!-- bower:css -->
 <!-- endbower -->
 <!-- endbuild -->
-<link rel=stylesheet href=/resources/styles/772eeba0.main.css>
+<link rel=stylesheet href=/resources/styles/be70d43f.main.css>
 <script src=/resources/scripts/vendor/10d160c6.modernizr.js></script>
 <body>
 	<!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-	<div class="navbar navbar-inverse navbar-fixed-top" role=navigation>
-		<div class=container>
-			<div class=navbar-header>
-				<button type=button class=navbar-toggle data-toggle=collapse
-					data-target=.navbar-collapse>
-					<span class=sr-only>Toggle navigation</span> <span class=icon-bar></span>
-					<span class=icon-bar></span> <span class=icon-bar></span>
-				</button>
-				<a class=navbar-brand href="/"><img src=/resources/images/b5a5b52d.logo.png></a>
-			</div>
-			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href=javascript:><spring:message code="activationPortal.homeScreen.welecome.msg"/></a></li>
-					<li><a href=javascript:><spring:message code="activationPortal.homeScreen.glossary.msg"/></a></li>
-					<li><a href=javascript:><spring:message code="activationPortal.homeScreen.support.msg"/></a></li>
-					<li><a href=javascript:><spring:message code="activationPortal.homeScreen.logout.msg"/></a></li>
-				</ul>
-			</div>
-			<!--/.nav-collapse -->
+		<div class="navbar navbar-inverse navbar-fixed-top" role=navigation>
+	<div class=container>
+		<div class=navbar-header>
+			<button type=button class=navbar-toggle data-toggle=collapse
+				data-target=.navbar-collapse>
+				<span class=sr-only>Toggle navigation</span> <span class=icon-bar></span>
+				<span class=icon-bar></span> <span class=icon-bar></span>
+			</button>
+			<a class=navbar-brand href="/activation/home?lac=${lac.id}"><img
+				src=/resources/images/b5a5b52d.logo.png></a>
 		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href=javascript:><spring:message
+							code="activationPortal.homeScreen.welecome.msg" /></a></li>
+				<li><a href=javascript:><spring:message
+							code="activationPortal.homeScreen.glossary.msg" /></a></li>
+				<li><a href=javascript:><spring:message
+							code="activationPortal.homeScreen.support.msg" /></a></li>
+				<li><a href=javascript:><spring:message
+							code="activationPortal.homeScreen.logout.msg" /></a></li>
+			</ul>
+		</div>
+		<!--/.nav-collapse -->
 	</div>
-	<div class="main container">
+</div>	
+		<div class="main container">
 		<div class=row>
 			<div class=col-sm-6>
 				<h1 class=margin-top-0>
@@ -76,8 +81,8 @@
 				<div class="panel panel-default emc-panel">
 					<div class=panel-heading>
 						<h3 class=panel-title>
-							<span class=icons-key></span> <spring:message code="activationPortal.homeScreen.licenseheader.msg"/>
-						</h3>
+							<span class="glyphicon glyphicon-lock"></span> <spring:message code="activationPortal.homeScreen.licenseheader.msg"/>
+						</h3>						
 					</div>
 					<div class=panel-body>
 						<table class="table table-hover">
@@ -91,18 +96,31 @@
 							<c:forEach items="${lac.products}" var="prod">
 								<c:if test="${prod.productActivationType =='L'}" >
   									<tr>  									
-										<td>${prod.productDetail.name}</td>
+										<td>										
+											${prod.productDetail.name}											
+										</td>										
 										<td class=text-center>${prod.productDetail.totalQty}</td>
-										<td class=text-center><span class=lightGrayText>${prod.productDetail.activeQty}</span></td>
+										<td class=text-center>
+											<span class=lightGrayText>
+												<c:if test = "${prod.productDetail.activeQty !=0}">
+													<a class=productInfoLink data-lacid=${lac.id} data-productid=${prod.productDetail.id} href=javascript:;>${prod.productDetail.activeQty}</a>
+												</c:if>
+												<c:if test ="${prod.productDetail.activeQty==0}">
+													${prod.productDetail.activeQty}
+												</c:if>
+											</span>
+										</td>
 										<td class=text-center>${prod.productDetail.availableQty}</td>
 									<tr>
 								</c:if>
-							</c:forEach>								
+							</c:forEach>
 						</table>
 					</div>
 					<div class=panel-footer>
 						<div class=pull-right>
-							<span>5 <spring:message code="activationPortal.homeScreen.label.steps"/></span><a href=SelectLacProductQuantity.jsp class="btn btn-primary"><spring:message code="activationPortal.homeScreen.label.start"/>:
+							<span>5 <spring:message code="activationPortal.homeScreen.label.steps"/></span>
+								<a href="selectQuantity?lac=${lac.id}&activationType=L" class="btn btn-primary">
+								<spring:message code="activationPortal.homeScreen.label.start"/>:
 								<spring:message code="activationPortal.homeScreen.label.selectquantity"/> &raquo;</a>
 						</div>
 					</div>
@@ -110,7 +128,8 @@
 				<div class="panel panel-default emc-panel">
 					<div class=panel-heading>
 						<h3 class=panel-title>
-							<span class=icons-copy></span><spring:message code="activationPortal.homeScreen.certificateheader.msg"/>
+							<span class="glyphicon glyphicon-file"></span>
+							<spring:message code="activationPortal.homeScreen.certificateheader.msg"/>
 						</h3>
 					</div>
 					<div class=panel-body>
@@ -136,15 +155,17 @@
 					</div>
 					<div class=panel-footer>
 						<div class=pull-right>
-							<span>5 <spring:message code="activationPortal.homeScreen.label.steps"/></span><a href=SelectLacProductQuantity.jsp class="btn btn-primary"><spring:message code="activationPortal.homeScreen.label.start"/>:
-								<spring:message code="activationPortal.homeScreen.label.selectquantity"/> &raquo;</a>
+							<span>5 <spring:message code="activationPortal.homeScreen.label.steps"/></span>
+							<a href="selectQuantity?lac=${lac.id}&activationType=C" class="btn btn-primary">
+							<spring:message code="activationPortal.homeScreen.label.start"/>:
+							<spring:message code="activationPortal.homeScreen.label.selectquantity"/> &raquo;</a>
 						</div>
 					</div>
 				</div>
 				<div class="panel panel-default emc-panel">
 					<div class=panel-heading>
 						<h3 class=panel-title>
-							<span class=icons-computer></span> <spring:message code="activationPortal.homeScreen.autoactivateheader.msg"/>
+							<span class="glyphicon glyphicon-certificate"></span> <spring:message code="activationPortal.homeScreen.autoactivateheader.msg"/>
 						</h3>
 					</div>
 					<div class=panel-body>
@@ -170,8 +191,9 @@
 					</div>
 					<div class=panel-footer>
 						<div class=pull-right>
-							<span>2 <spring:message code="activationPortal.homeScreen.label.steps"/></span><a href=SelectLacProductQuantity.jsp class="btn btn-primary">
-								<spring:message code="activationPortal.homeScreen.label.activate"/>
+							<span>2 <spring:message code="activationPortal.homeScreen.label.steps"/></span>
+							<a href="selectQuantity?lac=${lac.id}&activationType=A" class="btn btn-primary">
+							<spring:message code="activationPortal.homeScreen.label.activate"/>
 								&raquo;</a>
 						</div>
 					</div>
@@ -179,6 +201,56 @@
 			</div>
 		</div>
 	</div>
+	<div class="modal fade" id=infoModal>
+		<div class="modal-dialog modal-lg">
+			<div class=modal-content>
+				<div class=modal-header>
+					<button type=button class=close data-dismiss=modal aria-hidden=true>&times;</button>
+					<h4 class=modal-title>Product Activation Details</h4>
+				</div>
+				<div class=modal-body></div>
+				<div class=modal-footer>
+					<button type=button class="btn btn-default" data-dismiss=modal>Close</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+<script type=text/html id=loadingTmpl>[% var loadingText = loadingText || 'loading...'; %]
+        <div class="loading">
+            
+        </div></script><script type=text/html id=productInfoTmpl>
+		
+		<h5>Name: <b>[%= resp.name %]</b></h5>  
+		
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th width="25%">Activation Id</th>
+              <th width="20%">Bound to</th>
+              <th width="15%" class="text-center">Activated By</th>
+              <th width="25%" class="text-center">Activated On</th>
+              <th width="15%" class="text-center"></th>
+            </tr>
+          </thead>
+          <tbody>
+            [% for(var i=0; i<resp.activatedLicensesList.length; i++){ %]
+                <tr>
+                  <td>[%= resp.activatedLicensesList[i].activationId %]</td>
+                  <td>[%= resp.activatedLicensesList[i].boundTo %]</td>
+                  <td class="text-center">[%= resp.activatedLicensesList[i].activatedBy %]</td>
+                  <td class="text-center">[%= resp.activatedLicensesList[i].activatedOn %]</td>
+                  <td class="text-center">
+                    <a href="javascript:;" class="prodInfoIcon icons-mail"></a>
+                    <a href="javascript:;" class="prodInfoIcon icons-user"></a>
+                    <a href="javascript:;" class="prodInfoIcon icons-info"></a>
+                  </td>
+                </tr>
+            [% } %]
+          </tbody>
+        </table></script>			
 	<script src=/resources/scripts/3eda25cb.vendor.js></script>
 	<script src=/resources/scripts/036656e4.plugins.js></script>
-	<script src=/resources/scripts/58186c39.main.js></script>
+	<script src=/resources/scripts/aaf28002.main.js></script>
+	

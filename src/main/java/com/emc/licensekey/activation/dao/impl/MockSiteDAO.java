@@ -4,6 +4,8 @@ package com.emc.licensekey.activation.dao.impl;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
+
 import org.springframework.stereotype.Service;
 import com.emc.licensekey.activation.dao.SiteDAO;
 import com.emc.licensekey.activation.domain.SiteAddress;
@@ -15,24 +17,42 @@ public class MockSiteDAO implements SiteDAO {
 	private static HashMap<String, List<SiteAddress>> siteDetails = new HashMap<String, List<SiteAddress>>();
 
 	@Override
+	public String getSystemNameFromSystemId(String systemId) {
+		// TODO Auto-generated method stub
+		for(SiteAddress site:siteDetails.get("1"))
+		{
+			for(SystemDetail systemDetail:site.getSystemList())
+			{
+				if(systemDetail.getId().equals(systemId))
+				{
+					return systemDetail.getName();
+				}
+			}
+		}
+		return "EMC/Test Machine";
+	}
+	
+	@Override
 	public List<SiteAddress> getSiteDetailsFromUserId(String userId) {
 		return siteDetails.get(userId);
 	}
 
 	static {
+		
+		int systemId = 1;
 		List<SiteAddress> siteList = new ArrayList<SiteAddress>();
 
 		SiteAddress site = new SiteAddress();
-		site.setSiteID("1");
+		site.setId("1");
 		site.setStreetAddress("176 South Street");
 		site.setCity("Hopkinton");
 		site.setProvinceCode("MA");
 		site.setCountry("United States");
 		site.setPinCode("01730");		
 		List<SystemDetail> systemList = new ArrayList<SystemDetail>();		
-		systemList.add(createSystemObject("Hopkinton/System-A"));
-		systemList.add(createSystemObject("Hopkinton/System-B"));
-		systemList.add(createSystemObject("Hopkinton/System-C"));
+		systemList.add(createSystemObject("Hopkinton/System-A",systemId++));
+		systemList.add(createSystemObject("Hopkinton/System-B",systemId++));
+		systemList.add(createSystemObject("Hopkinton/System-C",systemId++));
 		site.setSystemList(systemList);
 		
 		siteList.add(site);
@@ -40,26 +60,27 @@ public class MockSiteDAO implements SiteDAO {
 		
 		
 		site = new SiteAddress();
-		site.setSiteID("2");
+		site.setId("2");
 		site.setStreetAddress("174 Middlesex Turnpike");
 		site.setCity("Bedford");
 		site.setProvinceCode("MA");
 		site.setCountry("United States");
 		site.setPinCode("01730");
 		systemList = new ArrayList<SystemDetail>();		
-		systemList.add(createSystemObject("Beford/System-A"));
-		systemList.add(createSystemObject("Beford/System-B"));
-		systemList.add(createSystemObject("Beford/System-C"));
+		systemList.add(createSystemObject("Beford/System-A",systemId++));
+		systemList.add(createSystemObject("Beford/System-B",systemId++));
+		systemList.add(createSystemObject("Beford/System-C",systemId++));
 		site.setSystemList(systemList);
 		
 		siteList.add(site);
 		
 		siteDetails.put("1", siteList);
 	}
-	private static SystemDetail createSystemObject(String name)
+	private static SystemDetail createSystemObject(String name,int systemId)
 	{
 		SystemDetail system = new SystemDetail();
-		system.setSystemName(name);
+		system.setName(name);
+		system.setId(systemId+"");
 		system.setIpAddress(getRandomIpAddress(name));
 		system.setMacAddress(getRandomMacAddress(name));
 		
@@ -78,5 +99,17 @@ public class MockSiteDAO implements SiteDAO {
 		{			
 			return "121.12.112.1";
 		}
+	}
+
+	public static String getSystemIdFromSystemName(String systemName) {
+		for (SiteAddress site : siteDetails.get("1")) {
+			for (SystemDetail systemDetail : site.getSystemList()) {
+				if (systemDetail.getName().equals(systemName)) {
+					return systemDetail.getId();
+				}
+			}
+		}
+		return "EMC/Test Machine";
+
 	}
 }

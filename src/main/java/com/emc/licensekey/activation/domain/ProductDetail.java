@@ -8,7 +8,7 @@ public class ProductDetail {
 	private String name;
 	private int totalQty;
 	private int activeQty;
-	private int availableQty;	
+	private int availableQty;
 	private List<ActivationDetails> activationList;
 	public String getId() {
 		return id;

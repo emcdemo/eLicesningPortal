@@ -7,7 +7,7 @@ import java.util.List;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 
-import com.emc.licensekey.activation.request.ActivateProductDetail;
+import com.emc.licensekey.activation.request.LacSelectedProducts;
 import com.emc.licensekey.activation.request.LacProductActivationRequest;
 
 public class Test {
@@ -16,14 +16,9 @@ public class Test {
 	{
 		LacProductActivationRequest obj = new LacProductActivationRequest();
 		obj.setLacId("12313213");
-		List<ActivateProductDetail> list = new ArrayList<ActivateProductDetail>();
-		ActivateProductDetail prod = new ActivateProductDetail();
-		prod.setActivatedQty(10);
-		prod.setProductId("1");
-		list.add(prod);
-		prod = new ActivateProductDetail();
-		prod.setActivatedQty(5);
-		prod.setProductId("2");
+		List<LacSelectedProducts> list = new ArrayList<LacSelectedProducts>();
+		LacSelectedProducts prod = new LacSelectedProducts();
+			prod.setProductId("2");
 		list.add(prod);
 		obj.setActivateProductList(list);
 		try {

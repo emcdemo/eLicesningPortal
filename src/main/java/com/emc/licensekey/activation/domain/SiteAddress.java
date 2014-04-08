@@ -4,19 +4,22 @@ import java.util.List;
 
 public class SiteAddress {
 
-	private String siteID;
+	private String id;
 	private String streetAddress;
 	private String city;
 	private String province;
 	private String provinceCode;
 	private String pinCode;
 	private String country;
+	
 	private List<SystemDetail> systemList;
-	public String getSiteID() {
-		return siteID;
+
+	
+	public String getId() {
+		return id;
 	}
-	public void setSiteID(String siteID) {
-		this.siteID = siteID;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getStreetAddress() {
 		return streetAddress;
