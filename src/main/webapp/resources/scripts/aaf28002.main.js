@@ -74,11 +74,12 @@ $(document).ready(function () {
 		/* temp delay to let user know that there is some communication with server */
 		setTimeout(function(){
 			$.ajax({
-				'url': '/activation/getProductLicenseDetails?lac='+lacId+"&productId="+productId,				
+				'url': 'getProductLicenseDetails?lac='+lacId+"&productId="+productId,				
 				'content-type': 'json',				
 				'success': function(resp){
 					resp = JSON.parse(resp);
 					$('#infoModal .modal-title').html(resp.product_name);
+					//console.log(typeof resp);
 					$('#infoModal .modal-body').html(tmpl('productInfoTmpl', {
 						resp: resp
 					}));
@@ -274,7 +275,7 @@ $(document).ready(function () {
 			(				
 					{ 
 						type: "POST", 
-						url: "/activation/process", 
+						url: "process", 
 						data: JSON.stringify(selProd),
 						headers: { 
 					            'Accept': 'application/json',
@@ -339,7 +340,7 @@ $(document).ready(function () {
 					'url': jsonURL,
 					'content-type': 'json',
 					'success': function(resp){
-						resp = JSON.parse(resp);
+					//	resp = JSON.parse(resp);
 						$('#wrapper').hide();
 						resp.selProdQty = selProd.qty;
 						if(selProd.selectedProds)

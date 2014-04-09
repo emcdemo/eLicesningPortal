@@ -32,7 +32,7 @@
 				<span class=sr-only>Toggle navigation</span> <span class=icon-bar></span>
 				<span class=icon-bar></span> <span class=icon-bar></span>
 			</button>
-			<a class=navbar-brand href="/activation/home?lac=${lac.id}"><img
+			<a class=navbar-brand href="home?lac=${lac.id}"><img
 				src=/resources/images/b5a5b52d.logo.png></a>
 		</div>
 		<div class="collapse navbar-collapse">
@@ -45,6 +45,7 @@
 							code="activationPortal.homeScreen.support.msg" /></a></li>
 				<li><a href=javascript:><spring:message
 							code="activationPortal.homeScreen.logout.msg" /></a></li>
+
 			</ul>
 		</div>
 		<!--/.nav-collapse -->

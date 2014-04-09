@@ -41,7 +41,7 @@ function sendAjax() {
 		(				
 				{ 
 					type: "POST", 
-					url: "/activation/process", 
+					url: "process", 
 					data: jsonData, 
 					headers: { 
 				            'Accept': 'application/json',
@@ -73,7 +73,7 @@ function sendAjax() {
 				<span class=sr-only>Toggle navigation</span> <span class=icon-bar></span>
 				<span class=icon-bar></span> <span class=icon-bar></span>
 			</button>
-			<a class=navbar-brand href="/activation/home?lac=${lacId}"><img
+			<a class=navbar-brand href="home?lac=${lacId}"><img
 				src=/resources/images/b5a5b52d.logo.png></a>
 		</div>
 		<div class="collapse navbar-collapse">
@@ -158,10 +158,10 @@ function sendAjax() {
 						</div>
 						<div class=panel-footer>
 							<div class=pull-left>
-								<a href="/activation/home?lac=${lacId}" class="btn btn-default"><spring:message code="activationPortal.common.back.label"/></a>
+								<a href="home?lac=${lacId}" class="btn btn-default"><spring:message code="activationPortal.common.back.label"/></a>
 							</div>
 							<div class=pull-right>
-								<a href="/activation/home?lac=${lacId}" class="btn btn-default"><spring:message code="activationPortal.common.cancel.label"/></a> <a
+								<a href="home?lac=${lacId}" class="btn btn-default"><spring:message code="activationPortal.common.cancel.label"/></a> <a
 									href=javascript: data-nextid=step2
 									class="btn btn-primary next-step"><spring:message code="activationPortal.common.next.label"/> <spring:message code="activationPortal.homeScreen.label.selectsystems"/>
 									&raquo;</a>
@@ -272,10 +272,10 @@ function sendAjax() {
         </div>
        <div class="panel-footer">
                             <div class="pull-left">
-                                <a href="/activation/selectQuantity?lac=${lacId}&activationType=${activationType}" class="btn btn-default"><spring:message code="activationPortal.common.back.label"/></a>
+                                <a href="selectQuantity?lac=${lacId}&activationType=${activationType}" class="btn btn-default"><spring:message code="activationPortal.common.back.label"/></a>
                             </div>
                             <div class="pull-right">
-                                <a href="/activation/home?lac=${lacId}" class="btn btn-default"><spring:message code="activationPortal.common.cancel.label"/></a>
+                                <a href="home?lac=${lacId}" class="btn btn-default"><spring:message code="activationPortal.common.cancel.label"/></a>
                                 <a href="javascript:" data-nextid="step3" class="btn btn-primary next-step"><spring:message code="activationPortal.common.next.label"/>: <spring:message code="activationPortal.lockingScreen.LockingId.button"/> &raquo;</a>
                             </div>
 
@@ -310,10 +310,10 @@ function sendAjax() {
                         </div>
                               <div class="panel-footer">
                             <div class="pull-left">
-                                <a href="/activation/selectQuantity?lac=${lacId}&activationType=${activationType}" class="btn btn-default"><spring:message code="activationPortal.common.back.label"/></a>
+                                <a href="selectQuantity?lac=${lacId}&activationType=${activationType}" class="btn btn-default"><spring:message code="activationPortal.common.back.label"/></a>
                             </div>
                             <div class="pull-right">
-                                <a href="/activation/home?lac=${lacId}" class="btn btn-default"><spring:message code="activationPortal.common.cancel.label"/></a>
+                                <a href="home?lac=${lacId}" class="btn btn-default"><spring:message code="activationPortal.common.cancel.label"/></a>
                                 <a href="javascript:" data-nextid="step4" class="btn btn-primary next-step">Next: <spring:message code="activationPortal.reviewActivationScreen.ReviewActivation.button"/> &raquo;</a>
                             </div>
 
@@ -358,10 +358,10 @@ function sendAjax() {
                         </div>
                         <div class="panel-footer">                            
                             <div class="pull-left">
-                                <a href="/activation/selectQuantity?lac=${lacId}&activationType=${activationType}" class="btn btn-default"><spring:message code="activationPortal.common.back.label"/></a>
+                                <a href="selectQuantity?lac=${lacId}&activationType=${activationType}" class="btn btn-default"><spring:message code="activationPortal.common.back.label"/></a>
                             </div>
                             <div class="pull-right">
-                                <a href="/activation/home?lac=${lacId}" class="btn btn-default"><spring:message code="activationPortal.common.cancel.label"/></a>
+                                <a href="home?lac=${lacId}" class="btn btn-default"><spring:message code="activationPortal.common.cancel.label"/></a>
                                 <a href="javascript:" data-nextid="step5" id="step4Next" class="btn btn-primary next-step disabled"><spring:message code="activationPortal.reviewActivationScreen.activatelicenses.button"/> &raquo;</a>
                             </div>
 
@@ -409,7 +409,7 @@ function sendAjax() {
                         </div>
                         <div class="panel-footer">                            
                             <div class="pull-right">
-                                <a href="/activation/home?lac=${lacId}" class="btn btn-primary"><spring:message code="activationPortal.common.done.header.label"/></a>                                
+                                <a href="home?lac=${lacId}" class="btn btn-primary"><spring:message code="activationPortal.common.done.header.label"/></a>                                
                             </div>
 
                         </div>
@@ -420,7 +420,7 @@ function sendAjax() {
 	
 	<input type=hidden id=step2JSONUrl value=/resources/data/systems.json>
 	<input type=hidden id=step4JSONUrl value=/resources/data/licenses.json>
-	<input type=hidden id=step5JSONUrl value=/activation/process>
+	<input type=hidden id=step5JSONUrl value=process>
 	<script src=/resources/scripts/3eda25cb.vendor.js></script>
 	<script src=/resources/scripts/036656e4.plugins.js></script>
 	<script src=/resources/scripts/aaf28002.main.js></script>
