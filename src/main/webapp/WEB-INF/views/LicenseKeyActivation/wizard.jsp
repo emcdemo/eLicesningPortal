@@ -80,7 +80,7 @@ function sendAjax() {
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href=javascript:><spring:message
 							code="activationPortal.homeScreen.welecome.msg" /></a></li>
-				<li><a href=javascript:><spring:message
+				<li><a href="http://emclicportal.snetbl.com/portal/dashboard.html" target="_blank"><spring:message
 							code="activationPortal.homeScreen.glossary.msg" /></a></li>
 				<li><a href=javascript:><spring:message
 							code="activationPortal.homeScreen.support.msg" /></a></li>
