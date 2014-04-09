@@ -26,6 +26,12 @@ public class MockLacProductDAO implements LacProductDAO{
 	
 	static
 	{
+		setup();
+		
+	}
+
+	
+	public static void setup(){
 		HashMap<String, List<Object>> lacRegisteredProductQtyDetails = new HashMap<String, List<Object>>();
 		List<Object> productDetails = new ArrayList<Object>();
 		
@@ -112,7 +118,6 @@ public class MockLacProductDAO implements LacProductDAO{
 		lacProductDetails.put("MMM3NNNN4LLLLL5", lacRegisteredProductQtyDetails);
 		
 	}
-
 	@Override
 	public void updateProductActivationDetails(String id,
 			String productId, List<ActivationDetails> activationDetails) {

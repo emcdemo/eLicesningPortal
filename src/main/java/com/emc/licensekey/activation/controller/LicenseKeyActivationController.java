@@ -50,6 +50,12 @@ public class LicenseKeyActivationController {
 		return new ModelAndView("LicenseKeyActivation/home", "lac", lacService.getLacDetails(lac));
 	}
 	
+	@RequestMapping(value="resetCount", method=RequestMethod.GET)
+	public ModelAndView resetCount(@RequestParam String lac) {				
+		activationService.resetCount();
+		return new ModelAndView("LicenseKeyActivation/home", "lac", lacService.getLacDetails(lac));
+	}
+	
 	@RequestMapping(value="selectQuantity", method=RequestMethod.GET)
 	public ModelAndView loadHomePage(@RequestParam String lac,String activationType) {	
 		List<Product> productList = lacService.getLacDetails(lac).getProducts();

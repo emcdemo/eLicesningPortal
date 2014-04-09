@@ -23,9 +23,9 @@
 <!-- bower:css -->
 <!-- endbower -->
 <!-- endbuild -->
-<link rel=stylesheet href=/resources/styles/be70d43f.main.css>
-<script src=/resources/scripts/vendor/10d160c6.modernizr.js></script>
-<script type="text/javascript" src=/resources/jquery/1.6/jquery.js></script>
+<link rel=stylesheet href=<c:url value="/resources/styles/be70d43f.main.css" />>
+<script src=<c:url value="/resources/scripts/vendor/10d160c6.modernizr.js" />></script>
+<script type="text/javascript" src=<c:url value="/resources/jquery/1.6/jquery.js" />></script>
 <script type="text/javascript">
 var token = $("meta[name='_csrf']").attr("content");
 var header = $("meta[name='_csrf_header']").attr("content");
@@ -74,7 +74,7 @@ function sendAjax() {
 				<span class=icon-bar></span> <span class=icon-bar></span>
 			</button>
 			<a class=navbar-brand href="home?lac=${lacId}"><img
-				src=/resources/images/b5a5b52d.logo.png></a>
+				src=<c:url value="/resources/scripts/3eda25cb.vendor.js" />></a>
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
@@ -418,9 +418,10 @@ function sendAjax() {
 	
 	<%@include file="TermsAndCondition.jsp" %>
 	
-	<input type=hidden id=step2JSONUrl value=/resources/data/systems.json>
-	<input type=hidden id=step4JSONUrl value=/resources/data/licenses.json>
+	<input type=hidden id=step2JSONUrl value=<c:url value="/resources/data/systems.json" />>
+	<input type=hidden id=step4JSONUrl value=<c:url value="/resources/data/licenses.json" />>
 	<input type=hidden id=step5JSONUrl value=process>
-	<script src=/resources/scripts/3eda25cb.vendor.js></script>
-	<script src=/resources/scripts/036656e4.plugins.js></script>
-	<script src=/resources/scripts/aaf28002.main.js></script>
+	<script src=<c:url value="/resources/scripts/3eda25cb.vendor.js" />></script>
+	<script src=<c:url value="/resources/scripts/036656e4.plugins.js" />></script>
+	<script src=<c:url value="/resources/scripts/aaf28002.main.js" />></script>
+	

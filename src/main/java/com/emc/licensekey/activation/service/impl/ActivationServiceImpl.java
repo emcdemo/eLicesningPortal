@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.emc.licensekey.activation.dao.LacProductDAO;
+import com.emc.licensekey.activation.dao.impl.MockLacProductDAO;
 import com.emc.licensekey.activation.domain.ActivationDetails;
 import com.emc.licensekey.activation.request.LacProductActivationRequest;
 import com.emc.licensekey.activation.request.LacSelectedProducts;
@@ -44,4 +45,8 @@ public class ActivationServiceImpl implements ActivationService{
 		}
 		return totalActivationList;
 	}	
+	
+	public void resetCount(){
+		MockLacProductDAO.setup();
+	}
 }

@@ -18,8 +18,8 @@
 <!-- bower:css -->
 <!-- endbower -->
 <!-- endbuild -->
-<link rel=stylesheet href=/resources/styles/be70d43f.main.css>
-<script src=/resources/scripts/vendor/10d160c6.modernizr.js></script>
+<link rel=stylesheet href=<c:url value="/resources/styles/be70d43f.main.css" />>
+<script src=<c:url value="/resources/scripts/vendor/10d160c6.modernizr.js" />></script>
 <body>
 	<!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -33,7 +33,7 @@
 				<span class=icon-bar></span> <span class=icon-bar></span>
 			</button>
 			<a class=navbar-brand href="home?lac=${lac.id}"><img
-				src=/resources/images/b5a5b52d.logo.png></a>
+				src=<c:url value="/resources/images/b5a5b52d.logo.png" />></a>
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
@@ -251,7 +251,7 @@
             [% } %]
           </tbody>
         </table></script>			
-	<script src=/resources/scripts/3eda25cb.vendor.js></script>
-	<script src=/resources/scripts/036656e4.plugins.js></script>
-	<script src=/resources/scripts/aaf28002.main.js></script>
+	<script src=<c:url value="/resources/scripts/3eda25cb.vendor.js" />></script>
+	<script src=<c:url value="/resources/scripts/036656e4.plugins.js" />></script>
+	<script src=<c:url value="/resources/scripts/aaf28002.main.js" />></script>
 	

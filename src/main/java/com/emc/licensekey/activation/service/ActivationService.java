@@ -7,4 +7,6 @@ import com.emc.licensekey.activation.request.LacProductActivationRequest;
 
 public interface ActivationService {
 	public List<ActivationDetails> execute(LacProductActivationRequest lacProductActivationRequest);
+	
+	public void  resetCount();
 }
