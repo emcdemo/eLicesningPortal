@@ -73,7 +73,7 @@ function sendAjax() {
 				<span class=sr-only>Toggle navigation</span> <span class=icon-bar></span>
 				<span class=icon-bar></span> <span class=icon-bar></span>
 			</button>
-			<a class=navbar-brand href="home?lac=${lac.id}"><img
+			<a class=navbar-brand href="home?lac=${lacId}"><img
 				src=<c:url value="/resources/images/b5a5b52d.logo.png" />></a>
 
 		</div>
