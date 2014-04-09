@@ -151,7 +151,7 @@ public class LicenseKeyActivationController {
 	}
 	
 	@RequestMapping(value="/" +
-			"", method=RequestMethod.GET)
+			"getProductLicenseDetails", method=RequestMethod.GET)
 	public @ResponseBody String getProductLicenseDetails(@RequestParam String lac, @RequestParam String productId) {
 	
 		LacProductLicenseDetails lacProductLicenseDetails = lacService.getProductActivationDetails(lac,productId);
